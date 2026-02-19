@@ -109,6 +109,9 @@ const initializeApp = (): void => {
   initializeScrollAnimations();
   initializeContactForm();
 
+  // Show page with fade-in after content is ready
+  document.body.classList.add('loaded');
+
   // Log that app is ready
   console.log('Portfolio app initialized successfully');
 };
