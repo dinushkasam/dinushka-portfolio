@@ -5,9 +5,6 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
-    hmr: {
-      overlay: false,
-    },
   },
   build: {
     target: 'ES2020',

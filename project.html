@@ -21,34 +21,34 @@
 
     <!-- MEDIA BLOCKS -->
 
-    <div class="max-w-5xl mx-auto px-3 sm:px-4 py-12 sm:py-16 space-y-10 sm:space-y-14 relative z-10">
+    <div class="max-w-5xl mx-auto px-3 sm:px-4 py-12 sm:py-16 space-y-10 sm:space-y-14">
 
         <!-- ===== SINGLE IMAGES ===== -->
-        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image1.jpeg')">
-            <img src="/images/projects/image1.jpeg" alt="Project image 1" class="w-full h-full object-cover pointer-events-none">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
+            <img src="/images/projects/image1.jpeg" alt="Project image 1" class="w-full h-full object-cover">
         </div>
 
-        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image2.jpeg')">
-            <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover pointer-events-none">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
+            <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover">
         </div>
 
-        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image3.jpeg')">
-            <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover pointer-events-none">
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
+            <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover">
         </div>
 
         <!-- ===== 4-IMAGE PHOTO GRID (2x2) ===== -->
-        <div class="grid grid-cols-2 gap-3 sm:gap-4 relative z-20">
-            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image2.jpeg')">
-                <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl">
+                <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image3.jpeg')">
-                <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl">
+                <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image4.jpeg')">
-                <img src="/images/projects/image4.jpeg" alt="Project image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl">
+                <img src="/images/projects/image4.jpeg" alt="Project image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
-            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image5.jpeg')">
-                <img src="/images/projects/image5.jpeg" alt="Project image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl">
+                <img src="/images/projects/image5.jpeg" alt="Project image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
             </div>
         </div>
 
@@ -74,38 +74,6 @@
         </svg>
     </button>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" style="cursor: zoom-out;" onclick="closeLightbox(event)">
-        <button class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" style="cursor: pointer;" onclick="closeLightbox(event)">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <img id="lightbox-img" src="" alt="Zoomed image" class="max-w-full max-h-[90vh] object-contain rounded-lg" style="cursor: default;" onclick="event.stopPropagation()">
-    </div>
-
     <script type="module" src="/src/main.ts"></script>
-    
-    <script>
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = src;
-            lightbox.classList.remove('hidden');
-            lightbox.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeLightbox(event) {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.add('hidden');
-            lightbox.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
 </body>
 </html>
