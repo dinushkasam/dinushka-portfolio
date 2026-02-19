@@ -57,7 +57,12 @@ export const ContactSection = (): string => {
         </div>
 
         <!-- Contact Form -->
-        <form class="contact-form space-y-4 sm:space-y-6 max-w-2xl mx-auto">
+        <form class="contact-form space-y-4 sm:space-y-6 max-w-2xl mx-auto" action="https://formsubmit.co/ajax/dinushkasam@gmail.com" method="POST">
+          <!-- FormSubmit config -->
+          <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+          <input type="hidden" name="_template" value="table">
+          <!-- Honeypot field for spam protection (hidden from users) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div>
             <label class="block text-gray-300 text-sm sm:text-base font-medium mb-2">
               Name <span class="text-red-400">*</span>
@@ -67,6 +72,8 @@ export const ContactSection = (): string => {
               name="name"
               placeholder="Your Name..." 
               required
+              minlength="2"
+              maxlength="100"
               class="input-field"
             >
           </div>
@@ -79,6 +86,7 @@ export const ContactSection = (): string => {
               name="email"
               placeholder="Your Email Address..." 
               required
+              maxlength="254"
               class="input-field"
             >
           </div>
@@ -91,10 +99,11 @@ export const ContactSection = (): string => {
               placeholder="Your Message..." 
               rows="6" 
               required
+              minlength="10"
+              maxlength="5000"
               class="input-field resize-none"
             ></textarea>
           </div>
-          <div class="form-message hidden text-sm font-medium pt-2"></div>
           <div class="text-center">
             <button type="submit" class="btn-primary">
               Send Message

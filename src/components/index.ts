@@ -8,3 +8,4 @@ export { WorkSection } from './WorkSection';
 export { ContactSection } from './ContactSection';
 export { Footer } from './Footer';
 export { ScrollToTop } from './ScrollToTop';
+export { showToast } from './Toast';
