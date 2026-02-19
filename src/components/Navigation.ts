@@ -25,8 +25,8 @@ export const Navigation = (props: NavigationProps = {}): string => {
             ${links}
           </ul>
           
-          <!-- Logo/Name - Centered -->
-          <a href="/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white">
+          <!-- Logo/Name - Centered (hidden on small screens) -->
+          <a href="/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
             Dinushka Samaranayake
           </a>
           
