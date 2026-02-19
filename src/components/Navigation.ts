@@ -9,9 +9,11 @@ export interface NavigationProps {
 
 export const Navigation = (props: NavigationProps = {}): string => {
   const links = props.isProjectPage 
-    ? `<li><a href="/#work" class="nav-link text-sm sm:text-base">Work</a></li>
+    ? `<li><a href="/#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
+       <li><a href="/#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
        <li><a href="/#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`
-    : `<li><a href="#work" class="nav-link text-sm sm:text-base">Work</a></li>
+    : `<li><a href="#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
+       <li><a href="#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
        <li><a href="#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`;
 
   return `

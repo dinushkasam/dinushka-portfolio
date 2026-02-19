@@ -5,6 +5,7 @@
 export { Navigation } from './Navigation';
 export { HeroSection } from './HeroSection';
 export { WorkSection } from './WorkSection';
+export { TwoDDesignSection } from './TwoDDesignSection';
 export { ContactSection } from './ContactSection';
 export { Footer } from './Footer';
 export { ScrollToTop } from './ScrollToTop';

@@ -3,7 +3,7 @@
  */
 
 import './styles/global.css';
-import { Navigation, HeroSection, WorkSection, ContactSection, Footer, ScrollToTop } from './components';
+import { Navigation, HeroSection, WorkSection, TwoDDesignSection, ContactSection, Footer, ScrollToTop } from './components';
 import { initializeNavigation, initializeScrollIndicator, initializeScrollToTop } from './utils/navigation';
 import { initializeScrollAnimations } from './utils/scroll';
 import { initializeContactForm } from './utils/form';
@@ -17,6 +17,7 @@ const renderHomePage = (): void => {
     ${Navigation()}
     ${HeroSection()}
     ${WorkSection()}
+    ${TwoDDesignSection()}
     ${ContactSection()}
     ${Footer()}
     ${ScrollToTop()}
