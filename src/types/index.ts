@@ -2,13 +2,17 @@
  * Type definitions for the portfolio application
  */
 
+export enum ProjectType {
+  Individual = 'Individual',
+  Group = 'Group',
+}
+
 export interface Project {
   id: string;
   title: string;
   year: number;
-  description: string;
   softwareUsed: string[];
-  projectType: 'Individual' | 'Group';
+  projectType: ProjectType;
   images?: string[];
   videoUrl?: string;
   relatedProjects?: string[];
