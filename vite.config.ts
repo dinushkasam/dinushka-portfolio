@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         project: resolve(__dirname, 'project.html'),
+        '2d-project': resolve(__dirname, '2d-project.html'),
       },
     },
   },
