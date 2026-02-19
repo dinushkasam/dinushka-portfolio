@@ -74,22 +74,22 @@ export const getProjectById = (id: string): Project | undefined => {
 export const getSocialLinks = () => [
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://lk.linkedin.com/in/dinushkasam',
     icon: 'linkedin',
   },
   {
     name: 'YouTube',
-    url: 'https://youtube.com',
+    url: 'https://youtube.com/@dinushkasam',
     icon: 'youtube',
   },
   {
     name: 'GitHub',
-    url: 'https://github.com',
+    url: 'https://github.com/dinushkasam',
     icon: 'github',
   },
   {
     name: 'Email',
-    url: 'mailto:your.email@example.com',
+    url: 'mailto:dinushkasam@gmail.com',
     icon: 'email',
   },
 ];

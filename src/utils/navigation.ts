@@ -57,3 +57,30 @@ export const initializeScrollIndicator = (): void => {
     });
   }
 };
+
+/**
+ * Initialize scroll-to-top button functionality
+ */
+export const initializeScrollToTop = (): void => {
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+  if (scrollToTopBtn) {
+    // Show/hide button based on scroll position
+    const toggleButtonVisibility = (): void => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollToTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleButtonVisibility);
+
+    // Scroll to top on click
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+};

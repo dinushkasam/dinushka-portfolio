@@ -34,7 +34,7 @@
   }
 
   .project-card {
-    @apply group relative bg-gray-800 border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2;
+    @apply relative bg-gray-800 border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2;
   }
 
   .input-field {

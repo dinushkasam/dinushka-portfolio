@@ -7,7 +7,13 @@ pnpm-debug.log*
 
 # Build output
 dist/
+dist-ssr/
 *.local
+
+# Cache
+.vite/
+*.tsbuildinfo
+.cache/
 
 # Editor directories and files
 .vscode/
@@ -26,3 +32,6 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# Test coverage
+coverage/
