@@ -7,6 +7,7 @@ import { Navigation, HeroSection, WorkSection, ContactSection, Footer, ScrollToT
 import { initializeNavigation, initializeScrollIndicator, initializeScrollToTop } from './utils/navigation';
 import { initializeScrollAnimations } from './utils/scroll';
 import { initializeContactForm } from './utils/form';
+import { getProjectById } from './config/projects';
 
 const renderHomePage = (): void => {
   const app = document.getElementById('app');
@@ -22,6 +23,32 @@ const renderHomePage = (): void => {
   `;
 };
 
+const renderProjectPageComponents = (): void => {
+  const navContainer = document.getElementById('nav-container');
+  const footerContainer = document.getElementById('footer-container');
+  const projectTitle = document.getElementById('project-title');
+  
+  if (navContainer) {
+    navContainer.innerHTML = Navigation({ isProjectPage: true });
+  }
+  
+  if (footerContainer) {
+    footerContainer.innerHTML = Footer();
+  }
+  
+  // Get project ID from URL and update title
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
+  
+  if (projectId && projectTitle) {
+    const project = getProjectById(projectId);
+    if (project) {
+      projectTitle.textContent = project.title;
+      document.title = `${project.title} - Dinushka Samaranayake`;
+    }
+  }
+};
+
 const initializeApp = (): void => {
   // Check if we're on the home page (has #app container)
   const app = document.getElementById('app');
@@ -29,6 +56,9 @@ const initializeApp = (): void => {
   if (app) {
     // Render home page components
     renderHomePage();
+  } else {
+    // Project page - render navigation and footer
+    renderProjectPageComponents();
   }
 
   // Initialize all modules

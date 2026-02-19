@@ -30,7 +30,7 @@ export const Navigation = (props: NavigationProps = {}): string => {
           
           <!-- Logo - Right -->
           <a href="/" class="flex-shrink-0">
-            <img src="/src/media/logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
+            <img src="/logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
           </a>
         </div>
       </div>

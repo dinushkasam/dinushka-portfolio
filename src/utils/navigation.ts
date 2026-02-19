@@ -26,7 +26,6 @@ export const initializeNavigation = (): void => {
 
     sections.forEach((section) => {
       const sectionTop = (section as HTMLElement).offsetTop;
-      const sectionHeight = (section as HTMLElement).clientHeight;
 
       if (window.scrollY >= sectionTop - 300) {
         currentSection = section.getAttribute('id') || '';

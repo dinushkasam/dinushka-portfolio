@@ -6,199 +6,66 @@
     <meta name="description" content="Project Details">
     <meta name="theme-color" content="#0f172a">
     <title>Project - Dinushka Samaranayake</title>
-    <link rel="icon" type="image/jpeg" href="/src/media/logo.jpeg">
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg">
 </head>
 <body class="bg-slate-900 text-gray-100">
-    <!-- Fixed Navigation Bar -->
-    <nav class="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-b border-gray-800 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <!-- Navigation Links -->
-                <ul class="flex gap-4 sm:gap-8">
-                    <li><a href="/#work" class="nav-link text-sm sm:text-base">Work</a></li>
-                    <li><a href="/#contact" class="nav-link text-sm sm:text-base">Contact</a></li>
-                </ul>
-                
-                <!-- Logo/Name - Centered -->
-                <a href="/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white">
-                    Dinushka Samaranayake
-                </a>
-                
-                <!-- Empty div for flexbox balance -->
-                <div class="w-24"></div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Container -->
+    <div id="nav-container"></div>
 
     <!-- Project Title Section -->
-    <section class="pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 border-b border-gray-800">
-        <div class="max-w-6xl mx-auto">
-            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 sm:mb-6">Abstract</h1>
-            <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mb-8 sm:mb-12">
-                This is where you can add a detailed description of your project. Explain what you built, the challenges you faced, the technologies you used, and the impact it had.
-            </p>
-
-            <!-- Project Info -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-                <div>
-                    <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wide mb-2">Year</p>
-                    <p class="text-base sm:text-lg text-gray-300 font-semibold">2026</p>
-                </div>
-                <div>
-                    <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wide mb-2">Project Type</p>
-                    <span class="inline-block px-3 py-1 bg-blue-900/50 text-blue-300 text-xs sm:text-sm rounded-full border border-blue-700/50">Individual</span>
-                </div>
-                <div class="col-span-2 sm:col-span-1">
-                    <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wide mb-2">Software Used</p>
-                    <p class="text-base sm:text-lg text-gray-300 font-semibold">React, TypeScript, Tailwind</p>
-                </div>
-            </div>
+    <section class="pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-10 md:pb-12 px-4 sm:px-6 lg:px-8 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 id="project-title" class="text-2xl sm:text-3xl font-bold text-white">Project</h3>
         </div>
     </section>
 
-    <!-- Image Gallery Section -->
-    <section class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto">
-            <!-- Gallery Title -->
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12">Project Photos</h2>
+    <!-- MEDIA BLOCKS -->
 
-            <!-- Image Grid - 2x2 Responsive -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
-                <!-- Image 1 -->
-                <div class="overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80 cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-cyan-900/30" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
-                            <circle cx="8.5" cy="9.5" r="1.5"></circle>
-                            <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="2" fill="none"></path>
-                        </svg>
-                    </div>
-                    <img src="" alt="Project image 1" class="w-full h-full object-cover hidden">
-                </div>
+    <div class="max-w-5xl mx-auto px-3 sm:px-4 py-12 sm:py-16 space-y-10 sm:space-y-14 relative z-10">
 
-                <!-- Image 2 -->
-                <div class="overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80 cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-yellow-900/30" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
-                            <circle cx="8.5" cy="9.5" r="1.5"></circle>
-                            <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="2" fill="none"></path>
-                        </svg>
-                    </div>
-                    <img src="" alt="Project image 2" class="w-full h-full object-cover hidden">
-                </div>
+        <!-- ===== SINGLE IMAGES ===== -->
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image1.jpeg')">
+            <img src="/images/projects/image1.jpeg" alt="Project image 1" class="w-full h-full object-cover pointer-events-none">
+        </div>
 
-                <!-- Image 3 -->
-                <div class="overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80 cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-purple-900/30" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
-                            <circle cx="8.5" cy="9.5" r="1.5"></circle>
-                            <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="2" fill="none"></path>
-                        </svg>
-                    </div>
-                    <img src="" alt="Project image 3" class="w-full h-full object-cover hidden">
-                </div>
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image2.jpeg')">
+            <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover pointer-events-none">
+        </div>
 
-                <!-- Image 4 -->
-                <div class="overflow-hidden rounded-xl h-56 sm:h-64 md:h-72 lg:h-80 cursor-pointer group">
-                    <div class="w-full h-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-orange-900/30" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V5z"></path>
-                            <circle cx="8.5" cy="9.5" r="1.5"></circle>
-                            <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="2" fill="none"></path>
-                        </svg>
-                    </div>
-                    <img src="" alt="Project image 4" class="w-full h-full object-cover hidden">
-                </div>
+        <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg relative z-20" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image3.jpeg')">
+            <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover pointer-events-none">
+        </div>
+
+        <!-- ===== 4-IMAGE PHOTO GRID (2x2) ===== -->
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 relative z-20">
+            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image2.jpeg')">
+                <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
             </div>
-
-            <!-- Gallery Instructions -->
-            <div class="bg-gray-800/30 border border-gray-700 rounded-xl p-6 sm:p-8">
-                <h3 class="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">How to Add Images</h3>
-                <div class="space-y-2 sm:space-y-3 text-gray-300 text-sm sm:text-base">
-                    <p>1. Replace the gradient placeholder divs with your actual images</p>
-                    <p>2. Add <code class="bg-gray-900 px-2 py-1 rounded text-xs">src="your-image-url"</code> to the img tags</p>
-                    <p>3. Remove the placeholder divs or hide them with <code class="bg-gray-900 px-2 py-1 rounded text-xs">hidden</code> class</p>
-                    <p>4. For multiple projects, duplicate this page and customize the content</p>
-                </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image3.jpeg')">
+                <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+            </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image4.jpeg')">
+                <img src="/images/projects/image4.jpeg" alt="Project image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
+            </div>
+            <div class="aspect-[4/3] overflow-hidden rounded-xl" style="cursor: zoom-in !important;" onclick="openLightbox('/images/projects/image5.jpeg')">
+                <img src="/images/projects/image5.jpeg" alt="Project image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 pointer-events-none">
             </div>
         </div>
-    </section>
 
-    <!-- Video Section (Optional) -->
-    <section class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12">Project Showcase</h2>
-
-            <!-- Video Container -->
-            <div class="aspect-video bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden flex items-center justify-center border border-gray-700 mb-8">
-                <div class="text-center">
-                    <svg class="w-16 h-16 sm:w-20 sm:h-20 mx-auto text-gray-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.40,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16201367 C3.34915502,0.9049162 2.40734225,1.01449892 1.77946707,1.4857911 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.99701575 L3.03521743,10.4380088 C3.03521743,10.5951061 3.19218622,10.7522035 3.50612381,10.7522035 L16.6915026,11.5376904 C16.6915026,11.5376904 17.1624089,11.5376904 17.1624089,12.0089825 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"></path>
-                    </svg>
-                    <p class="text-gray-400 text-base sm:text-lg">
-                        Embed a YouTube, Vimeo, or upload a video file
-                    </p>
-                </div>
-                <!-- Replace with: <iframe width="100%" height="100%" src="your-video-url" frameborder="0" allowfullscreen></iframe> -->
-            </div>
-
-            <p class="text-gray-400 text-sm sm:text-base">
-                Add an iframe embed code from YouTube, Vimeo, or self-hosted video player. Update the video container with your video source.
-            </p>
+        <!-- ===== VIDEO WITH THUMBNAIL ===== -->
+        <div class="aspect-video rounded-2xl overflow-hidden bg-black shadow-lg">
+            <video 
+                src="/images/projects/video.mp4" 
+                poster="/images/projects/thumbnail.jpeg"
+                class="w-full h-full" 
+                controls
+            ></video>
         </div>
-    </section>
 
-    <!-- More Projects Section -->
-    <section class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12">More Projects</h2>
-
-            <!-- Projects Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Similar projects can be linked here -->
-                <a href="project.html" class="group block">
-                    <div class="h-48 sm:h-56 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl mb-4 flex items-center justify-center border border-gray-700 group-hover:border-gray-600 transition-colors">
-                        <span class="text-5xl sm:text-6xl">🎨</span>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Related Project 1</h3>
-                    <p class="text-gray-400 text-sm sm:text-base">2026</p>
-                </a>
-
-                <a href="project.html" class="group block">
-                    <div class="h-48 sm:h-56 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl mb-4 flex items-center justify-center border border-gray-700 group-hover:border-gray-600 transition-colors">
-                        <span class="text-5xl sm:text-6xl">🚀</span>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Related Project 2</h3>
-                    <p class="text-gray-400 text-sm sm:text-base">2025</p>
-                </a>
-
-                <a href="project.html" class="group block">
-                    <div class="h-48 sm:h-56 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl mb-4 flex items-center justify-center border border-gray-700 group-hover:border-gray-600 transition-colors">
-                        <span class="text-5xl sm:text-6xl">✨</span>
-                    </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Related Project 3</h3>
-                    <p class="text-gray-400 text-sm sm:text-base">2025</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800 bg-slate-900/50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
-                <p class="text-gray-500 text-sm sm:text-base text-center sm:text-left">
-                    &copy; 2026 Dinushka Samaranayake. All rights reserved.
-                </p>
-                <div class="flex gap-6">
-                    <a href="/#work" class="text-gray-500 hover:text-blue-400 transition-colors text-sm">Back to Work</a>
-                    <a href="/#contact" class="text-gray-500 hover:text-blue-400 transition-colors text-sm">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <!-- Scroll to Top Button -->
     <button id="scroll-to-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gray-700/80 hover:bg-gray-600 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 invisible z-50 shadow-lg" aria-label="Scroll to top">
@@ -207,6 +74,38 @@
         </svg>
     </button>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" style="cursor: zoom-out;" onclick="closeLightbox(event)">
+        <button class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" style="cursor: pointer;" onclick="closeLightbox(event)">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoomed image" class="max-w-full max-h-[90vh] object-contain rounded-lg" style="cursor: default;" onclick="event.stopPropagation()">
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
+    
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox(event) {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>

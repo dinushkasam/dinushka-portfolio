@@ -11,11 +11,14 @@ const renderProjectCard = (project: Project): string => {
     ? 'bg-blue-900/50 text-blue-300 border-blue-700/50'
     : 'bg-purple-900/50 text-purple-300 border-purple-700/50';
 
+  const thumbnailContent = project.thumbnail
+    ? `<img src="${project.thumbnail}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
+    : `<span class="text-gray-600 text-sm">Thumbnail</span>`;
+
   return `
     <a href="project.html?id=${project.id}" class="project-card group block">
-      <div class="h-56 sm:h-64 md:h-72 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center border-b border-gray-700 group-hover:border-gray-600 transition-colors p-4">
-        <!-- Thumbnail placeholder - replace with actual image -->
-        <span class="text-gray-600 text-sm">Thumbnail</span>
+      <div class="h-56 sm:h-64 md:h-72 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center border-b border-gray-700 group-hover:border-gray-600 transition-colors overflow-hidden">
+        ${thumbnailContent}
       </div>
       <div class="p-4 sm:p-6 bg-gray-800/30">
         <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">${project.title}</h3>

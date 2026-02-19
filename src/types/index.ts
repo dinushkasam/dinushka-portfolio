@@ -13,6 +13,7 @@ export interface Project {
   year: number;
   softwareUsed: string[];
   projectType: ProjectType;
+  thumbnail?: string;
   images?: string[];
   videoUrl?: string;
   relatedProjects?: string[];
