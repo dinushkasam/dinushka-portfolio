@@ -34,7 +34,7 @@ export const TwoDDesignSection = (): string => {
         </div>
 
         <!-- 2D Art Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           ${projectCards}
         </div>
       </div>

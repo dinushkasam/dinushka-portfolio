@@ -29,6 +29,12 @@ export const twoDProjects: TwoDProject[] = [
     thumbnail: '/images/2d/thumbnail.jpeg',
     image: '/images/2d/thumbnail.jpeg',
   },
+  {
+    id: '2d-4',
+    title: 'Digital Painting',
+    thumbnail: '/images/2d/thumbnail.jpeg',
+    image: '/images/2d/thumbnail.jpeg',
+  },
 ];
 
 export const getTwoDProjectById = (id: string): TwoDProject | undefined => {
