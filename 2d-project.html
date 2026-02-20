@@ -37,6 +37,11 @@
         </svg>
     </button>
 
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" onclick="if(event.target === this) this.classList.add('hidden')">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

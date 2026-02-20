@@ -26,30 +26,30 @@
 
         <!-- ===== SINGLE IMAGES ===== -->
         <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
-            <img src="/images/projects/image1.jpeg" alt="Project image 1" class="w-full h-full object-cover">
+            <img src="/images/projects/image1.jpeg" alt="Project image 1" class="w-full h-full object-cover cursor-magnify" data-lightbox>
         </div>
 
         <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
-            <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover">
+            <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover cursor-magnify" data-lightbox>
         </div>
 
         <div class="aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
-            <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover">
+            <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover cursor-magnify" data-lightbox>
         </div>
 
         <!-- ===== 4-IMAGE PHOTO GRID (2x2) ===== -->
         <div class="grid grid-cols-2 gap-3 sm:gap-4">
             <div class="aspect-[4/3] overflow-hidden rounded-xl">
-                <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <img src="/images/projects/image2.jpeg" alt="Project image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-magnify" data-lightbox>
             </div>
             <div class="aspect-[4/3] overflow-hidden rounded-xl">
-                <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <img src="/images/projects/image3.jpeg" alt="Project image 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-magnify" data-lightbox>
             </div>
             <div class="aspect-[4/3] overflow-hidden rounded-xl">
-                <img src="/images/projects/image4.jpeg" alt="Project image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <img src="/images/projects/image4.jpeg" alt="Project image 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-magnify" data-lightbox>
             </div>
             <div class="aspect-[4/3] overflow-hidden rounded-xl">
-                <img src="/images/projects/image5.jpeg" alt="Project image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <img src="/images/projects/image5.jpeg" alt="Project image 5" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 cursor-magnify" data-lightbox>
             </div>
         </div>
 
@@ -74,6 +74,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" onclick="if(event.target === this) this.classList.add('hidden')">
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
 </body>

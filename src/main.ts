@@ -79,7 +79,7 @@ const render2DProjectPageComponents = (): void => {
       
       if (artworkContainer) {
         artworkContainer.innerHTML = `
-          <img src="${project.image}" alt="${project.title}" class="w-full h-auto">
+          <img src="${project.image}" alt="${project.title}" class="w-full h-auto cursor-magnify" data-lightbox>
         `;
       }
     }
@@ -108,12 +108,47 @@ const initializeApp = (): void => {
   initializeScrollToTop();
   initializeScrollAnimations();
   initializeContactForm();
+  initializeLightbox();
 
   // Show page with fade-in after content is ready
   document.body.classList.add('loaded');
 
   // Log that app is ready
   console.log('Portfolio app initialized successfully');
+};
+
+const initializeLightbox = (): void => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  
+  if (!lightbox || !lightboxImg) return;
+
+  // Add click handlers to all images with data-lightbox attribute
+  document.querySelectorAll('[data-lightbox]').forEach((img) => {
+    img.addEventListener('click', () => {
+      const imgEl = img as HTMLImageElement;
+      lightboxImg.src = imgEl.src;
+      lightboxImg.alt = imgEl.alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    }
+  });
+
+  // Update onclick to also remove flex class
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    }
+  };
 };
 
 // Wait for DOM to be fully loaded
