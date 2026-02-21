@@ -13,7 +13,7 @@ export interface TwoDProject {
 export const twoDProjects: TwoDProject[] = [
   {
     id: '2d-1',
-    title: 'Miku',
+    title: 'Hatsune Miku',
     thumbnail: '/images/2d/thumbnail.jpeg',
     image: '/images/2d/thumbnail.jpeg',
   },
