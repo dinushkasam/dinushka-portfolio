@@ -241,6 +241,7 @@ const initializeApp = async (): Promise<void> => {
 const initializeLightbox = (): void => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxClose = document.getElementById('lightbox-close');
   
   if (!lightbox || !lightboxImg) return;
 
@@ -270,6 +271,15 @@ const initializeLightbox = (): void => {
       lightbox.classList.remove('flex');
     }
   };
+
+  // Close button click handler
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    });
+  }
 };
 
 // Wait for DOM to be fully loaded
