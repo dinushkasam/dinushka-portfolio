@@ -3,14 +3,7 @@
  */
 
 import type { Project } from '../types/index';
-import { projects } from './projectsData';
 
-// Re-export projects for convenience
-export { projects };
-
-export const getProjectById = (id: string): Project | undefined => {
-  return projects.find(project => project.id === id);
-};
 
 export const getSocialLinks = () => [
   {

@@ -2,8 +2,6 @@
  * API Configuration for Cloudflare R2
  */
 
-import type { Project, TwoDProject } from '../types';
-
 export const R2_ACCOUNT_ID = 'd4bd51c11efd0a01400acb82b568f1fe';
 export const BASE_URL = `https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev`; 
 
