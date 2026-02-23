@@ -88,11 +88,9 @@ const renderProjectPageComponents = async (): Promise<void> => {
               } else if (section.type === 'grid' && Array.isArray(section.src)) {
                 const gridCols = section.src.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3';
                 contentHtml += `
-                  <div class="grid grid-cols-1 ${gridCols} gap-2 sm:gap-3 mb-8 last:mb-0">
+                  <div class="grid grid-cols-1 ${gridCols} gap-4 sm:gap-6 mb-8 last:mb-0">
                     ${section.src.map(imgSrc => `
-                      <div class="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-900/20">
-                        <img src="${imgSrc}" alt="${project.name}" class="w-full h-full object-contain cursor-magnify hover:scale-[1.01] transition-transform duration-300 block" data-lightbox>
-                      </div>
+                      <img src="${imgSrc}" alt="${project.name}" class="w-full object-contain rounded-xl shadow-md cursor-magnify hover:scale-[1.01] transition-transform duration-300" data-lightbox>
                     `).join('')}
                   </div>
                 `;
@@ -177,11 +175,9 @@ const render2DProjectPageComponents = async (): Promise<void> => {
               } else if (section.type === 'grid' && Array.isArray(section.src)) {
                 const gridCols = section.src.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3';
                 contentHtml += `
-                  <div class="grid grid-cols-1 ${gridCols} gap-2 sm:gap-3 mb-8 last:mb-0">
+                  <div class="grid grid-cols-1 ${gridCols} gap-4 sm:gap-6 mb-8 last:mb-0">
                     ${section.src.map(imgSrc => `
-                      <div class="aspect-video overflow-hidden rounded-xl shadow-md bg-gray-900/20">
-                        <img src="${imgSrc}" alt="${project.name}" class="w-full h-full object-contain cursor-magnify hover:scale-[1.01] transition-transform duration-300 block" data-lightbox>
-                      </div>
+                      <img src="${imgSrc}" alt="${project.name}" class="w-full object-contain rounded-xl shadow-md cursor-magnify hover:scale-[1.01] transition-transform duration-300" data-lightbox>
                     `).join('')}
                   </div>
                 `;
