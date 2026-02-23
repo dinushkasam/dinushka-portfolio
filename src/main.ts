@@ -68,13 +68,13 @@ const renderProjectPageComponents = async (): Promise<void> => {
             project.sections.forEach((section) => {
               if (section.type === 'image') {
                 contentHtml += `
-                  <div class="aspect-video rounded-2xl shadow-lg overflow-hidden bg-gray-900/20 mb-8 last:mb-0">
+                  <div class="rounded-2xl shadow-lg overflow-hidden bg-gray-900/20 mb-8 last:mb-0">
                       <img src="${section.src}" alt="${project.name}" class="w-full h-full object-contain cursor-magnify block" data-lightbox>
                   </div>
                 `;
               } else if (section.type === 'video') {
                 contentHtml += `
-                  <div class="aspect-video rounded-2xl overflow-hidden bg-black shadow-lg mb-8 last:mb-0">
+                  <div class="rounded-2xl overflow-hidden bg-black shadow-lg mb-8 last:mb-0">
                       <video 
                           src="${section.src}" 
                           poster="${section.thumbnail || project.thumbnail || ''}"
@@ -155,13 +155,13 @@ const render2DProjectPageComponents = async (): Promise<void> => {
             project.sections.forEach((section) => {
               if (section.type === 'image') {
                 contentHtml += `
-                  <div class="aspect-video overflow-hidden rounded-2xl shadow-lg mb-8 last:mb-0 bg-gray-900/20">
+                  <div class="overflow-hidden rounded-2xl shadow-lg mb-8 last:mb-0 bg-gray-900/20">
                     <img src="${section.src}" alt="${project.name}" class="w-full h-full object-contain cursor-magnify block" data-lightbox>
                   </div>
                 `;
               } else if (section.type === 'video') {
                 contentHtml += `
-                  <div class="aspect-video rounded-2xl overflow-hidden bg-black shadow-lg mb-8 last:mb-0">
+                  <div class="rounded-2xl overflow-hidden bg-black shadow-lg mb-8 last:mb-0">
                       <video 
                           src="${section.src}" 
                           poster="${section.thumbnail || project.thumbnail || ''}"
