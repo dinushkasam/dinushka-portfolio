@@ -3,16 +3,20 @@
  * Renders project cards dynamically from config
  */
 
-import { projects } from '../config/projects';
 import type { Project } from '../types/index';
 
 const renderProjectCard = (project: Project): string => {
-  const projectTypeColor = project.projectType === 'Individual' 
+  const displayProjectType = project.projectType || 'Individual';
+  const displaySoftware = project.softwareUsed && project.softwareUsed.length > 0 
+    ? (Array.isArray(project.softwareUsed) ? project.softwareUsed.join(', ') : project.softwareUsed)
+    : 'Blender';
+
+  const projectTypeColor = displayProjectType === 'Individual' 
     ? 'bg-blue-900/50 text-blue-300 border-blue-700/50'
     : 'bg-purple-900/50 text-purple-300 border-purple-700/50';
 
   const thumbnailContent = project.thumbnail
-    ? `<img src="${project.thumbnail}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
+    ? `<img src="${project.thumbnail}" alt="${project.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`
     : `<span class="text-gray-600 text-sm">Thumbnail</span>`;
 
   return `
@@ -21,22 +25,22 @@ const renderProjectCard = (project: Project): string => {
         ${thumbnailContent}
       </div>
       <div class="p-4 sm:p-6 bg-gray-800/30">
-        <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">${project.title}</h3>
-        <p class="text-gray-400 text-sm sm:text-base mb-4">${project.year}</p>
+        <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">${project.name}</h3>
+        <p class="text-gray-400 text-sm sm:text-base mb-4">${project.date}</p>
         <div class="mb-3 sm:mb-4">
           <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wide mb-2">Software Used</p>
-          <p class="text-sm sm:text-base text-gray-300">${project.softwareUsed.join(', ')}</p>
+          <p class="text-sm sm:text-base text-gray-300">${displaySoftware}</p>
         </div>
         <div>
           <p class="text-xs sm:text-sm text-gray-500 uppercase tracking-wide mb-2">Project Type</p>
-          <span class="inline-block px-3 py-1 ${projectTypeColor} text-xs sm:text-sm rounded-full border">${project.projectType}</span>
+          <span class="inline-block px-3 py-1 ${projectTypeColor} text-xs sm:text-sm rounded-full border">${displayProjectType}</span>
         </div>
       </div>
     </a>
   `;
 };
 
-export const WorkSection = (): string => {
+export const WorkSection = (projects: Project[]): string => {
   const projectCards = projects.map(renderProjectCard).join('');
 
   return `

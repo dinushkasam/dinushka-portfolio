@@ -7,16 +7,30 @@ export enum ProjectType {
   Group = 'Group',
 }
 
-export interface Project {
-  id: string;
-  title: string;
-  year: number;
-  softwareUsed: string[];
-  projectType: ProjectType;
+export interface ProjectSection {
+  type: 'image' | 'video' | 'grid';
+  src: string | string[]; // src is string for image/video, string[] for grid
   thumbnail?: string;
-  images?: string[];
-  videoUrl?: string;
-  relatedProjects?: string[];
+  loop?: boolean;
+  autoplay?: boolean;
+}
+
+export interface Project {
+  id: string; // The folder name from index.json
+  name: string;
+  date: string;
+  thumbnail: string;
+  softwareUsed?: string[];
+  projectType?: ProjectType;
+  sections: ProjectSection[];
+}
+
+export interface TwoDProject {
+  id: string; // The folder name from index.json
+  name: string;
+  date?: string;
+  thumbnail: string;
+  sections: ProjectSection[];
 }
 
 export interface NavLink {
