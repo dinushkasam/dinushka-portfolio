@@ -24,7 +24,7 @@ export async function fetchProjectIndex(): Promise<ProjectIndex> {
 /**
  * Fetch metadata for a specific project
  */
-export async function fetchProjectMetadata<T>(type: '3d' | '2d', id: string): Promise<T> {
+export async function fetchProjectMetadata<T>(_type: '3d' | '2d', id: string): Promise<T> {
   const response = await fetch(`${BASE_URL}/${id}/config.json?t=${Date.now()}`);
   if (!response.ok) {
     throw new Error(`Failed to fetch metadata for project: ${id}`);

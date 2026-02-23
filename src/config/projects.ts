@@ -2,9 +2,6 @@
  * Projects configuration and utilities
  */
 
-import type { Project } from '../types/index';
-
-
 export const getSocialLinks = () => [
   {
     name: 'LinkedIn',
