@@ -9,6 +9,7 @@ import { initializeScrollAnimations, initializeScrollPositionPreservation, resto
 import { initializeContactForm } from './utils/form';
 import { fetchProjectIndex, fetchProjectMetadata, fetchAllProjects } from './config/api';
 import type { Project, TwoDProject } from './types/index';
+import { renderProjectSidebar } from './components/Sidebar';
 
 const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void => {
   const app = document.getElementById('app');
@@ -23,6 +24,18 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
     ${Footer()}
     ${ScrollToTop()}
   `;
+
+  // Restore scroll position if available, otherwise scroll to hash
+  setTimeout(() => {
+    // @ts-ignore: restoreScrollPosition is globally available or imported
+    const restored = typeof restoreScrollPosition === 'function' ? restoreScrollPosition() : false;
+    if (!restored && window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, 0);
 };
 
 const renderProjectPageComponents = async (): Promise<void> => {
@@ -33,6 +46,8 @@ const renderProjectPageComponents = async (): Promise<void> => {
   
   if (navContainer) {
     navContainer.innerHTML = Navigation({ isProjectPage: true });
+    // Render sidebar after nav is in DOM
+    renderProjectSidebar();
   }
   
   if (footerContainer) {
@@ -121,6 +136,8 @@ const render2DProjectPageComponents = async (): Promise<void> => {
   
   if (navContainer) {
     navContainer.innerHTML = Navigation({ isProjectPage: true });
+    // Render sidebar after nav is in DOM
+    renderProjectSidebar();
   }
   
   if (footerContainer) {
@@ -289,6 +306,8 @@ const initializeLightbox = (): void => {
     });
   }
 };
+
+
 
 // Wait for DOM to be fully loaded
 if (document.readyState === 'loading') {
