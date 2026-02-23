@@ -35,6 +35,44 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+
+    // Hero background slideshow logic
+    const images = [
+      '/images/hero-bg/1.png',
+      '/images/hero-bg/2.png',
+      '/images/hero-bg/3.png',
+      '/images/hero-bg/4.png',
+      '/images/hero-bg/5.png',
+      '/images/hero-bg/6.png',
+      '/images/hero-bg/7.png',
+    ];
+    let current = 0;
+    const heroBg = document.getElementById('hero-bg');
+    let first = true;
+    function showNextImage() {
+      if (!heroBg) return;
+      current = (current + 1) % images.length;
+      const img = document.createElement('img');
+      img.src = images[current];
+      img.className = 'inactive';
+      heroBg.appendChild(img);
+      setTimeout(() => {
+        img.className = 'active';
+      }, 50);
+      if (!first) {
+        const prevImg = heroBg.querySelectorAll('img')[0];
+        if (prevImg) {
+          prevImg.className = 'inactive';
+          setTimeout(() => {
+            if (prevImg.parentNode) prevImg.parentNode.removeChild(prevImg);
+          }, 1500);
+        }
+      } else {
+        first = false;
+      }
+      setTimeout(showNextImage, 4000);
+    }
+    setTimeout(showNextImage, 500);
   }, 0);
 };
 
