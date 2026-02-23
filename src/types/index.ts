@@ -19,6 +19,7 @@ export interface Project {
   id: string; // The folder name from index.json
   name: string;
   date: string;
+  description?: string;
   thumbnail: string;
   softwareUsed?: string[];
   projectType?: ProjectType;
@@ -29,6 +30,7 @@ export interface TwoDProject {
   id: string; // The folder name from index.json
   name: string;
   date?: string;
+  description?: string;
   thumbnail: string;
   sections: ProjectSection[];
 }

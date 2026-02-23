@@ -9,7 +9,7 @@ const renderProjectCard = (project: Project): string => {
   const displayProjectType = project.projectType || 'Individual';
   const displaySoftware = project.softwareUsed && project.softwareUsed.length > 0 
     ? (Array.isArray(project.softwareUsed) ? project.softwareUsed.join(', ') : project.softwareUsed)
-    : 'Blender';
+    : 'Blender & Adobe After Effects';
 
   const projectTypeColor = displayProjectType === 'Individual' 
     ? 'bg-blue-900/50 text-blue-300 border-blue-700/50'

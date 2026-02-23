@@ -49,6 +49,14 @@ const renderProjectPageComponents = async (): Promise<void> => {
       if (project) {
         if (projectTitle) {
           projectTitle.textContent = project.name;
+          
+          if (project.description) {
+            projectTitle.insertAdjacentHTML('afterend', `
+              <p id="project-description" class="mt-3 sm:mt-4 text-gray-400 max-w-4xl mx-auto leading-relaxed text-sm sm:text-base px-4">
+                ${project.description}
+              </p>
+            `);
+          }
         }
         document.title = `${project.name} - Dinushka Samaranayake`;
 
@@ -131,6 +139,14 @@ const render2DProjectPageComponents = async (): Promise<void> => {
       if (project) {
         if (projectTitle) {
           projectTitle.textContent = project.name;
+
+          if (project.description) {
+            projectTitle.insertAdjacentHTML('afterend', `
+              <p id="project-description" class="mt-3 sm:mt-4 text-gray-400 max-w-4xl mx-auto leading-relaxed text-sm sm:text-base px-4">
+                ${project.description}
+              </p>
+            `);
+          }
         }
         document.title = `${project.name} - Dinushka Samaranayake`;
         
