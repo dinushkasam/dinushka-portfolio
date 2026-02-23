@@ -5,7 +5,7 @@
 import './styles/global.css';
 import { Navigation, HeroSection, WorkSection, TwoDDesignSection, ContactSection, Footer, ScrollToTop } from './components';
 import { initializeNavigation, initializeScrollIndicator, initializeScrollToTop } from './utils/navigation';
-import { initializeScrollAnimations } from './utils/scroll';
+import { initializeScrollAnimations, initializeScrollPositionPreservation, restoreScrollPosition } from './utils/scroll';
 import { initializeContactForm } from './utils/form';
 import { fetchProjectIndex, fetchProjectMetadata, fetchAllProjects } from './config/api';
 import type { Project, TwoDProject } from './types/index';
@@ -204,6 +204,7 @@ const initializeApp = async (): Promise<void> => {
     const app = document.getElementById('app');
     const artworkContainer = document.getElementById('artwork-container');
     const projectContent = document.getElementById('project-content');
+    const isHomePage = !!app;
     
     if (app) {
       // Home page - fetch everything
@@ -228,6 +229,13 @@ const initializeApp = async (): Promise<void> => {
     initializeScrollAnimations();
     initializeContactForm();
     initializeLightbox();
+
+    // Initialize scroll position preservation for home page
+    if (isHomePage) {
+      initializeScrollPositionPreservation();
+      // Restore scroll position after everything is initialized
+      restoreScrollPosition();
+    }
 
     // Show page with fade-in after content is ready
     document.body.classList.add('loaded');
