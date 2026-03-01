@@ -59,20 +59,26 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
           preloadedImages[src] = preloadImg;
         });
         
+        function getRandomDirection(): 'left' | 'right' {
+          return Math.random() > 0.5 ? 'left' : 'right';
+        }
+
         function showNextImage() {
           if (!heroBg || !images.length) return;
           current = (current + 1) % images.length;
           const img = document.createElement('img');
           img.src = images[current];
-          img.className = 'inactive';
+          const inDirection = getRandomDirection();
+          img.className = `inactive from-${inDirection}`;
           heroBg.appendChild(img);
           setTimeout(() => {
-            img.className = 'active';
+            img.className = `active from-${inDirection}`;
           }, 50);
           if (!first) {
             const prevImg = heroBg.querySelectorAll('img')[0];
             if (prevImg) {
-              prevImg.className = 'inactive';
+              const outDirection = getRandomDirection();
+              prevImg.className = `inactive to-${outDirection}`;
               setTimeout(() => {
                 if (prevImg.parentNode) prevImg.parentNode.removeChild(prevImg);
               }, 2500);

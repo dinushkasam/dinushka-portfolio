@@ -32,6 +32,50 @@ export const HeroSection = (): string => {
       </div>
 
       <style>
+        @keyframes slideInFromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 0.15;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slideOutToLeft {
+          from {
+            opacity: 0.15;
+            transform: translateX(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+        }
+        
+        @keyframes slideInFromRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 0.15;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes slideOutToRight {
+          from {
+            opacity: 0.15;
+            transform: translateX(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+        }
+
         #hero-bg img {
           position: absolute;
           inset: 0;
@@ -39,14 +83,23 @@ export const HeroSection = (): string => {
           height: 100%;
           object-fit: cover;
           opacity: 0;
-          transition: opacity 2.5s;
           z-index: 0;
         }
-        #hero-bg img.active {
-          opacity: 0.15;
+        
+        #hero-bg img.active.from-left {
+          animation: slideInFromLeft 2.5s ease-out forwards;
         }
-        #hero-bg img.inactive {
-          opacity: 0;
+        
+        #hero-bg img.active.from-right {
+          animation: slideInFromRight 2.5s ease-out forwards;
+        }
+        
+        #hero-bg img.inactive.to-left {
+          animation: slideOutToLeft 2.5s ease-out forwards;
+        }
+        
+        #hero-bg img.inactive.to-right {
+          animation: slideOutToRight 2.5s ease-out forwards;
         }
       </style>
 
