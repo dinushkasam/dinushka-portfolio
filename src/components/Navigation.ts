@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 /**
  * Navigation Component
  * Reusable navigation bar component
@@ -8,10 +9,12 @@ export interface NavigationProps {
 }
 
 export const Navigation = (props: NavigationProps = {}): string => {
+  const baseUrl = import.meta.env.BASE_URL;
+  
   const links = props.isProjectPage 
-    ? `<li><a href="/#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
-       <li><a href="/#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
-       <li><a href="/#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`
+    ? `<li><a href="${baseUrl}#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
+       <li><a href="${baseUrl}#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
+       <li><a href="${baseUrl}#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`
     : `<li><a href="#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
        <li><a href="#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
        <li><a href="#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`;
@@ -26,13 +29,13 @@ export const Navigation = (props: NavigationProps = {}): string => {
           </ul>
           
           <!-- Logo/Name - Centered (hidden on small screens) -->
-          <a href="/dinushka-portfolio/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
+          <a href="${baseUrl}" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
             Dinushka Samaranayake
           </a>
           
           <!-- Logo - Right -->
-          <a href="/dinushka-portfolio/" class="flex-shrink-0">
-            <img src="logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
+          <a href="${baseUrl}" class="flex-shrink-0">
+            <img src="${baseUrl}logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
           </a>
         </div>
       </div>
