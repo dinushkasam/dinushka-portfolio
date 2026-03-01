@@ -39,7 +39,7 @@ export const HeroSection = (): string => {
           height: 100%;
           object-fit: cover;
           opacity: 0;
-          transition: opacity 1.5s;
+          transition: opacity 2.5s;
           z-index: 0;
         }
         #hero-bg img.active {

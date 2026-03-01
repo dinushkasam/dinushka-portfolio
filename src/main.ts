@@ -36,43 +36,57 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
       }
     }
 
-    // Hero background slideshow logic
-    const images = [
-      '/images/hero-bg/1.png',
-      '/images/hero-bg/2.png',
-      '/images/hero-bg/3.png',
-      '/images/hero-bg/4.png',
-      '/images/hero-bg/5.png',
-      '/images/hero-bg/6.png',
-      '/images/hero-bg/7.png',
-    ];
-    let current = 0;
-    const heroBg = document.getElementById('hero-bg');
-    let first = true;
-    function showNextImage() {
-      if (!heroBg) return;
-      current = (current + 1) % images.length;
-      const img = document.createElement('img');
-      img.src = images[current];
-      img.className = 'inactive';
-      heroBg.appendChild(img);
-      setTimeout(() => {
-        img.className = 'active';
-      }, 50);
-      if (!first) {
-        const prevImg = heroBg.querySelectorAll('img')[0];
-        if (prevImg) {
-          prevImg.className = 'inactive';
+    // Hero background slideshow logic (fetch hero images from index.json)
+    fetch('https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev/index.json?t=' + Date.now())
+      .then(res => res.json())
+      .then(indexData => {
+        const heroArray = Array.isArray(indexData.hero) ? indexData.hero : [];
+        if (!heroArray.length) return;
+        // Use the same base URL as in getAssetUrl, but for hero images, they are in different project folders
+        const BASE_URL = 'https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev';
+        const images = heroArray.map((path: string) => {
+          // If path is already absolute, use as is
+          if (path.startsWith('http') || path.startsWith('blob:') || path.startsWith('data:')) return path;
+          // path is like 'sage/thumb.png' or 'abstract/1-scaled.png'
+          return `${BASE_URL}/${path}`;
+        });
+        let current = 0;
+        const heroBg = document.getElementById('hero-bg');
+        let first = true;
+        
+        // Preload images to avoid loading delay during transition
+        const preloadedImages: { [key: string]: HTMLImageElement } = {};
+        images.forEach((src, idx) => {
+          const preloadImg = new window.Image();
+          preloadImg.src = src;
+          preloadedImages[src] = preloadImg;
+        });
+        
+        function showNextImage() {
+          if (!heroBg || !images.length) return;
+          current = (current + 1) % images.length;
+          const img = document.createElement('img');
+          img.src = images[current];
+          img.className = 'inactive';
+          heroBg.appendChild(img);
           setTimeout(() => {
-            if (prevImg.parentNode) prevImg.parentNode.removeChild(prevImg);
-          }, 1500);
+            img.className = 'active';
+          }, 50);
+          if (!first) {
+            const prevImg = heroBg.querySelectorAll('img')[0];
+            if (prevImg) {
+              prevImg.className = 'inactive';
+              setTimeout(() => {
+                if (prevImg.parentNode) prevImg.parentNode.removeChild(prevImg);
+              }, 2500);
+            }
+          } else {
+            first = false;
+          }
+          setTimeout(showNextImage, 4000);
         }
-      } else {
-        first = false;
-      }
-      setTimeout(showNextImage, 4000);
-    }
-    setTimeout(showNextImage, 500);
+        setTimeout(showNextImage, 500);
+      });
   }, 0);
 };
 
