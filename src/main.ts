@@ -7,7 +7,7 @@ import { Navigation, HeroSection, WorkSection, TwoDDesignSection, ContactSection
 import { initializeNavigation, initializeScrollIndicator, initializeScrollToTop } from './utils/navigation';
 import { initializeScrollAnimations, initializeScrollPositionPreservation, restoreScrollPosition } from './utils/scroll';
 import { initializeContactForm } from './utils/form';
-import { fetchProjectIndex, fetchProjectMetadata, fetchAllProjects } from './config/api';
+import { fetchProjectIndex, fetchProjectMetadata, fetchAllProjects, BASE_URL } from './config/api';
 import type { Project, TwoDProject } from './types/index';
 import { renderProjectSidebar } from './components/Sidebar';
 
@@ -37,17 +37,14 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
     }
 
     // Hero background slideshow logic (fetch hero images from index.json)
-    fetch('https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev/index.json?t=' + Date.now())
+    fetch(`${BASE_URL}/index.json?t=${Date.now()}`)
       .then(res => res.json())
       .then(indexData => {
         const heroArray = Array.isArray(indexData.hero) ? indexData.hero : [];
         if (!heroArray.length) return;
-        // Use the same base URL as in getAssetUrl, but for hero images, they are in different project folders
-        const BASE_URL = 'https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev';
         const images = heroArray.map((path: string) => {
           // If path is already absolute, use as is
           if (path.startsWith('http') || path.startsWith('blob:') || path.startsWith('data:')) return path;
-          // path is like 'sage/thumb.png' or 'abstract/1-scaled.png'
           return `${BASE_URL}/${path}`;
         });
         let current = 0;
@@ -56,7 +53,7 @@ const renderHomePage = (projects3d: Project[], projects2d: TwoDProject[]): void 
         
         // Preload images to avoid loading delay during transition
         const preloadedImages: { [key: string]: HTMLImageElement } = {};
-        images.forEach((src, idx) => {
+        images.forEach((src: string) => {
           const preloadImg = new window.Image();
           preloadImg.src = src;
           preloadedImages[src] = preloadImg;

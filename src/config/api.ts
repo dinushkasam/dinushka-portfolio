@@ -2,8 +2,10 @@
  * API Configuration for Cloudflare R2
  */
 
-export const R2_ACCOUNT_ID = 'd4bd51c11efd0a01400acb82b568f1fe';
-export const BASE_URL = `https://pub-37c984a390cf46e299cda313408bfe6a.r2.dev`; 
+// @ts-ignore - Vite environment variables
+export const R2_ACCOUNT_ID = import.meta.env.VITE_R2_ACCOUNT_ID || '';
+// @ts-ignore - Vite environment variables
+export const BASE_URL = import.meta.env.VITE_BASE_URL || ''; 
 
 export interface ProjectIndex {
   '3d': string[];
