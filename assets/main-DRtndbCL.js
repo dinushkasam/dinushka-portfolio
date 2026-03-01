@@ -1,29 +1,29 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function i(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(s){if(s.ep)return;s.ep=!0;const n=i(s);fetch(s.href,n)}})();const j=(e={})=>`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function i(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(s){if(s.ep)return;s.ep=!0;const n=i(s);fetch(s.href,n)}})();const j=(e={})=>{const t="/dinushka-portfolio/";return`
     <nav class="fixed top-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-b border-gray-800 z-50">
       <div class="section-container">
         <div class="flex items-center justify-between h-16 sm:h-20">
           <!-- Navigation Links -->
           <ul class="flex gap-4 sm:gap-8">
-            ${e.isProjectPage?`<li><a href="/#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
-       <li><a href="/#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
-       <li><a href="/#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`:`<li><a href="#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
+            ${e.isProjectPage?`<li><a href="${t}#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
+       <li><a href="${t}#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
+       <li><a href="${t}#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`:`<li><a href="#work" class="nav-link text-sm sm:text-base">3D Design</a></li>
        <li><a href="#design-2d" class="nav-link text-sm sm:text-base">2D Design</a></li>
        <li><a href="#contact" class="nav-link text-sm sm:text-base">Contact</a></li>`}
           </ul>
           
           <!-- Logo/Name - Centered (hidden on small screens) -->
-          <a href="/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
+          <a href="${t}" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
             Dinushka Samaranayake
           </a>
           
           <!-- Logo - Right -->
-          <a href="/" class="flex-shrink-0">
-            <img src="/logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
+          <a href="${t}" class="flex-shrink-0">
+            <img src="${t}logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
           </a>
         </div>
       </div>
     </nav>
-  `,P=()=>`
+  `},P=()=>`
     <section class="pt-16 sm:pt-20 md:pt-24 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden hero-section">
       <!-- Background gradient effect -->
       <div class="absolute inset-0 -z-20 h-full w-full bg-slate-900 opacity-80"></div>
