@@ -293,6 +293,14 @@ export async function renderProjectSidebar(currentProjectId?: string): Promise<v
     #project-sidebar .sidebar-item:hover {
       background: rgba(255, 255, 255, 0.2); /* Slightly more visible on hover */
     }
+    
+    /* Hide sidebar on screens smaller than 1400px to prevent overlap */
+    @media (max-width: 1290px) {
+      #sidebar-toggle,
+      #project-sidebar {
+        display: none !important;
+      }
+    }
   `;
   document.head.appendChild(style);
 }
