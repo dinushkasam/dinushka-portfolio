@@ -26,13 +26,13 @@ export const Navigation = (props: NavigationProps = {}): string => {
           </ul>
           
           <!-- Logo/Name - Centered (hidden on small screens) -->
-          <a href="/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
+          <a href="/dinushka-portfolio/" class="absolute left-1/2 transform -translate-x-1/2 text-lg sm:text-xl font-bold italic text-white hidden lg:block">
             Dinushka Samaranayake
           </a>
           
           <!-- Logo - Right -->
-          <a href="/" class="flex-shrink-0">
-            <img src="/logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
+          <a href="/dinushka-portfolio/" class="flex-shrink-0">
+            <img src="logo.jpeg" alt="DS Logo" class="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
           </a>
         </div>
       </div>
